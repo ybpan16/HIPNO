@@ -1,0 +1,159 @@
+# HIPNO public-repository exclusions
+#
+# This repository tracks source code, configuration templates, documentation,
+# manifests, and audited aggregate paper tables. It does not track raw or
+# row-level clinical data, waveform shards, trained weights, or local run data.
+
+# Operating-system and editor files
+.DS_Store
+.Rhistory
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Python build, test, and notebook state
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.ipynb_checkpoints/
+build/
+dist/
+*.egg-info/
+
+# Local environments, credentials, and private configuration
+.venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+secrets.*
+.netrc
+
+# Cluster and experiment runtime state
+/runs/
+/logs/
+/cache/
+/scratch/
+/tmp/
+/server_environment/
+/local_records/
+/paper/private/
+slurm-*.out
+slurm-*.err
+*.log
+core.*
+
+# Raw and derived physiological/clinical data
+/data/
+/datasets/
+/raw/
+/converted/
+/qc/
+/split*/
+/materialized*/
+/shards/
+/WaveformSample_selected/
+/MIMIC*/
+/VitalDB*/
+**/data/raw/
+**/data/interim/
+**/data/processed/
+**/qc/
+**/materialized*/
+**/shards/
+
+# Known row-level or identifier-bearing VitalDB files
+**/cases_clinical.csv
+**/converted_meta.csv
+**/qc_windows.csv
+**/qc_subject_summary.csv
+**/qc_record_summary.csv
+**/selected_windows.csv
+**/split_subjects.csv
+**/subject_sampling_summary.csv
+**/materialized_windows_manifest.csv
+**/training_meta.csv
+**/validation_meta.csv
+**/testing_meta.csv
+**/window_metrics.csv
+**/*_window_metrics.csv
+**/window_metrics_with_*.csv
+**/*_window_predictions.csv
+**/*window_responses.csv
+**/patient_metrics.csv
+**/*patient_predictions.csv
+**/*trend_pairs.csv
+**/*bootstrap_samples.csv
+
+# Model checkpoints, serialized estimators, and generated numerical arrays
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.pkl
+*.pickle
+*.joblib
+*.parquet
+*.feather
+*.arrow
+*.npy
+*.npz
+*.h5
+*.hdf5
+*.mat
+
+# Historical result trees are not copied wholesale into the release.
+# Curated, aggregate outputs belong under results/paper_release_<date>/.
+/eval_*/
+/co_calibration_*/
+/co_device_holdout_*/
+/counterfactual_*/
+/paper_results_seed*/
+/v9_*waveform*/
+/plot_compare_HIPNO_INNPAR/
+/figs*/
+/Figures/
+
+# Aggregate files remain private until their lineage and disclosure review are
+# complete. Move reviewed release tables under results/paper_release_<date>/.
+/vitaldb_cleaning_overview.csv
+
+# Generated document intermediates
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+
+# Third-party source trees remain excluded until their redistribution licenses
+# and exact upstream revisions have been verified.
+/INNPAR-PPG2ABP/
+/PaPaGei/
+
+# Intentionally NOT ignored:
+# - source code and shell/Slurm entry points
+# - configs without secrets or machine-specific paths
+# - manifests containing only file identity, counts, and SHA-256 values
+# - audited aggregate CSV/JSON/Markdown/LaTeX paper tables
+# - publication figures and PDFs that contain no row-level patient data
