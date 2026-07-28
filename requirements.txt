@@ -1,0 +1,13 @@
+# HIPNO runtime dependencies.
+# Install with: pip install -r requirements.txt
+#
+# PyTorch is listed without a CUDA variant. For GPU training, install the build
+# matching your CUDA toolkit first (see https://pytorch.org/get-started/locally/),
+# then install the remainder of this file.
+
+torch>=2.0
+numpy>=1.24
+pandas>=2.0
+scipy>=1.10
+pyarrow>=14.0
+tqdm>=4.65
