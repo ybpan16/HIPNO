@@ -1,6 +1,7 @@
 ## HIPNO: Symmetry-Aware Physics-Informed Neural Operators for Noninvasive Hemodynamic Inference
 
-*Yunbei Pan\*, Jiahang Sha\*, Simon A. Lee, Maxime Cannesson, Wei Wang, Jeffrey N. Chiang*<\br>
+*Yunbei Pan\*, Jiahang Sha\*, Simon A. Lee, Maxime Cannesson, Wei Wang, Jeffrey N. Chiang*
+
 *UCLA*
 
 
